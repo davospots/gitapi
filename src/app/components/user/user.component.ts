@@ -11,6 +11,10 @@ export class UserComponent implements OnInit {
 
   constructor() { }
 
+  public searchUser(){
+    
+  }
+
   ngOnInit(): void {
   }
 
