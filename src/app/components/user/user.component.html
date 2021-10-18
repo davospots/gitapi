@@ -7,9 +7,9 @@
             <div class="card-body">
                 <form action="" class="form-inline">
                     <div class="form-group mb-2">
-                        <input  type="search" class="form-control" placeholder="github user"></div>
-                    <div>
-                        <input type="submit" value="Submit" class="btn btn-primary btn-sm mb-2">
+                        <input name="name" [(ngModel)]="userQuery" type="search" class="form-control" placeholder="github user"></div>
+                    <div>{{userQuery}}
+                        <input type="submit" value="SUBMIT" class="btn btn-primary btn-sm mb-2">
                     </div>
                 </form>
             </div>
