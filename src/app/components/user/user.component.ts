@@ -1,5 +1,5 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 
 @Component({
@@ -8,17 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-
-  userQuery!: string;
+  @Output() emitSearch = new EventEmitter<any>()
   
 
+  userQuery!: string;
+  username = "";
   
 
   constructor() { }
 
-  searchUser(){
-    this
+  search(event: any) {
+    this.username = event.target.value
+    this.emitSearch.emit(this.username)
+    console.log(this.username)
   }
+
+  
 
   ngOnInit(): void {
   }
