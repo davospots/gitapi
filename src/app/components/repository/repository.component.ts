@@ -1,20 +1,24 @@
+import { GithubService } from './../../services/github.service';
 import { Component, OnInit } from '@angular/core';
+import { Repo } from 'src/app/shared/repo';
+import { User } from 'src/app/shared/user';
 
 @Component({
   selector: 'app-repository',
   templateUrl: './repository.component.html',
-  styleUrls: ['./repository.component.css']
+  styleUrls: ['./repository.component.css'],
+  providers: [GithubService]
 })
 export class RepositoryComponent implements OnInit {
   Users!: User;
-  Repos: Repository[] = [];
-  constructor(public userHttpService: GitService) { }
+  Repos: Repo[] = [];
+  constructor(public userHttpService: GithubService) { }
 
   ngOnInit() {
-    this.searchGit('kimutaimeshack');
+   
   }
-  searchGit(searchTerm: string) {
-    this.userHttpService.searchGits(searchTerm).then(
+  searchGithub(userQuery: string) {
+    this.userHttpService.searchGithub(userQuery).then(
       (success) => {
         this.Users = this.userHttpService.Users;
       },
@@ -22,7 +26,7 @@ export class RepositoryComponent implements OnInit {
         console.log(error);
       }
     );
-    this.userHttpService.searchRepos(searchTerm).then((success) => {
+    this.userHttpService.searchRepos(userQuery).then((success) => {
       this.Repos = this.userHttpService.Repos;
     });
   }

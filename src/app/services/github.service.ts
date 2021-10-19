@@ -1,5 +1,8 @@
 import { HttpClient} from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Repo } from '../shared/repo';
+import { User } from '../shared/user';
+
 
 
 
@@ -9,10 +12,10 @@ import { Injectable } from '@angular/core';
 export class GithubService {
 
   Users!: User;
-  Repos: Repository[] = [];
+  Repos: Repo[] = [];
 
-  constructor(private http: HttpClient) { }
-  searchGits(searchTerm: string) {
+  constructor(private httpClient: HttpClient) { }
+  searchGithub(userQuery: string) {
     interface userInterface {
       login: string;
       followers: any;
@@ -24,11 +27,11 @@ export class GithubService {
       name:string;
       bio:string;
     }
-    let urlUser = 'https://api.github.com/users/' + searchTerm;
+    let dataURL = `https://api.github.com/users/${userQuery} `;
 
     let promise = new Promise((resolve, reject) => {
-      this.http
-        .get<userInterface>(urlUser)
+      this.httpClient
+        .get<userInterface>(dataURL)
         .toPromise()
         .then(
           (result) => {
@@ -45,7 +48,7 @@ export class GithubService {
     });
     return promise;
   }
-  searchRepos(searchTerm: string) {
+  searchRepos(userQuery: string) {
     interface repoInterface {
       name: string;
       description: string;
@@ -53,17 +56,17 @@ export class GithubService {
       html_url:string;
     }
 
-    let urlUser = 'https://api.github.com/users/' + searchTerm + '/repos';
+    let dataURL = `https://api.github.com/users/${userQuery}/repos`;
 
     let promise = new Promise((resolve, reject) => {
-      this.http
-        .get<repoInterface[]>(urlUser)
+      this.httpClient
+        .get<repoInterface[]>(dataURL)
         .toPromise()
         .then(
           (results) => {
             this.Repos = [];
             for (let i = 0; i < results.length; i++) {
-              let repo = new Repository(
+              let repo = new Repo(
                 results[i].name,
                 results[i].description,
                 results[i].created_at,
