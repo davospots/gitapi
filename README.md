@@ -1,6 +1,7 @@
 # Gitapi
 
 ## Description
+App that is able to get github profiles including the user's repositories and showcasing their followers as well
 
 ## Setup Requirements
 
