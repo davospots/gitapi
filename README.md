@@ -39,5 +39,5 @@ The following languages have been used on this project:
 - Bootstrap
 - Angular CLI
 
-## Setup/Installation Requirements
-
+## Live link
+https://davospots.github.io/gitapi/
