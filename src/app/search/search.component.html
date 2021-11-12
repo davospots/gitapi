@@ -1,0 +1,8 @@
+<div class="card-header bg-secondary text-white">
+  <h4>Github User Search</h4>
+</div>
+<div class="card-body">
+  <form (ngSubmit)='search($event)' #userForm='ngForm'>
+      <input placeholder="search username ..." class="form-control" name ="searchTerm" [(ngModel)]="searchTerm" (keyup)="search($event)">
+  </form>
+</div>

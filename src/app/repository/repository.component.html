@@ -1,0 +1,14 @@
+<div class="container">
+  <div *ngIf='Repos'>
+    <div *ngFor='let repo of Repos'>
+      <div class="repository card">
+        <div class="card-body">
+          <h3>{{repo.name}}</h3>
+          <p> {{repo.description}} </p>
+          <a href="{{repo.html_url}}" class="repolink card-link"> {{repo.html_url}} </a>
+          <p class="repolink"> {{repo.created_at | date}}</p>
+        </div>
+     </div>
+    </div>
+  </div>
+</div>

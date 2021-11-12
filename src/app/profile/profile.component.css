@@ -1,0 +1,28 @@
+
+.myprofiledisplay{
+  display: flex;
+  justify-content: flex-center;
+  background-color: rgb(176, 97, 240);
+  font-size: x-large;
+  
+}
+.secondprofile{
+  padding: 20px;
+  margin: 30px;
+}
+.fistprofile{
+   padding: 20px;
+   margin: 30px;
+}
+#repolink {
+  font-size: xx-small;
+}
+.allrepo {
+  border: lightblue 10px;
+}
+
+.repository {
+  
+  padding: 19px;
+  margin: 19px;
+}
