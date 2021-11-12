@@ -1,19 +1,43 @@
 # Gitapi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
+## Setup Requirements
 
-## Development server
+- Git
+- Web-browser or your choice
+- Github
+- Angular CLI (https://cli.angular.io/)
+- Node.js (https://nodejs.org/)
+- NPM (https://www.npmjs.com/)
+- Github ApiKey
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Setup Installation
 
-## Code scaffolding
+- Copy the github repository url
+- Clone to your computer
+- Open terminal and navigate to the directory of the project you just cloned to your computer
+- Run the following command to install all the dependencies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+npm install
+```
 
-## Build
+- And the following to run development server
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+ng serve
+```
 
-## Further help
+- open the browser and navigate to http://localhost:4200/ to see the application in action
+- Generate Github ApiKey(https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Technologies Used
+
+The following languages have been used on this project:
+
+- HTML
+- CSS
+- Bootstrap
+- Angular CLI
+
+## Setup/Installation Requirements
+
